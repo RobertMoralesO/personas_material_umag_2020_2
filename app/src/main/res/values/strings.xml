@@ -15,4 +15,5 @@
 	<string name="apellido">Apellido</string>
 	<string name="guardar">Guardar</string>
 	<string name="limpiar">Limpiar</string>
+	<string name="titulo_detalle">DETALLE PERSONAS</string>
 </resources>

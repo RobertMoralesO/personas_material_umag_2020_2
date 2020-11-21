@@ -48,70 +48,92 @@
 		android:orientation="vertical">
 
 		<TextView
-			android:id="@+id/textView"
+			android:id="@+id/lblTituloDetalle"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:text="TextView" />
+			android:text="@string/titulo_detalle"
+			android:textAlignment="center"
+			android:textSize="24sp"
+			android:textStyle="bold" />
 
 		<ImageView
-			android:id="@+id/imageView"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
+			android:id="@+id/imgFotoDetalle"
+			android:layout_width="229dp"
+			android:layout_height="189dp"
+			android:layout_gravity="center_horizontal"
 			tools:srcCompat="@tools:sample/avatars" />
 
 		<TableLayout
+			android:id="@+id/tblTablaDetalle"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent">
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20sp"
+			android:stretchColumns="*">
 
 			<TableRow
+				android:id="@+id/filaCedula"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent">
 
 				<TextView
-					android:id="@+id/textView2"
+					android:id="@+id/lblTituloCedula"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView" />
+					android:layout_gravity="center_horizontal"
+					android:text="@string/cedula"
+					android:textSize="18sp"
+					android:textStyle="bold" />
 
 				<TextView
-					android:id="@+id/textView3"
+					android:id="@+id/lblCedulaDetalle"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView" />
+					android:layout_gravity="center_horizontal"
+					android:textSize="18sp" />
 			</TableRow>
 
 			<TableRow
+				android:id="@+id/filaNombre"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent">
 
 				<TextView
-					android:id="@+id/textView4"
+					android:id="@+id/lblTituloNombre"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView" />
+					android:layout_gravity="center_horizontal"
+					android:text="@string/nombre"
+					android:textSize="18sp"
+					android:textStyle="bold" />
 
 				<TextView
-					android:id="@+id/textView5"
+					android:id="@+id/lblNombreDetalle"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView" />
+					android:layout_gravity="center_horizontal"
+					android:textSize="18sp" />
 			</TableRow>
 
 			<TableRow
+				android:id="@+id/filaApellido"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent">
 
 				<TextView
-					android:id="@+id/textView7"
+					android:id="@+id/lblTituloApellido"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView" />
+					android:layout_gravity="center_horizontal"
+					android:text="@string/apellido"
+					android:textSize="18sp"
+					android:textStyle="bold" />
 
 				<TextView
-					android:id="@+id/textView6"
+					android:id="@+id/lblApellidoDetalle"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView" />
+					android:layout_gravity="center_horizontal"
+					android:textSize="18sp" />
 			</TableRow>
 
 		</TableLayout>
