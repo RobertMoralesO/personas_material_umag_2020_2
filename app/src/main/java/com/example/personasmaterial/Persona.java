@@ -14,7 +14,6 @@ public class Persona {
 	}
 
 	public Persona(){
-
 	}
 
 	public String getCedula() {
@@ -51,5 +50,9 @@ public class Persona {
 
 	public void guardar(){
 		Datos.guardar(this);
+	}
+
+	public void eliminar(){
+		Datos.eliminar(this);
 	}
 }

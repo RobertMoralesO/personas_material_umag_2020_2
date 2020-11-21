@@ -17,4 +17,10 @@
 	<string name="limpiar">Limpiar</string>
 	<string name="titulo_detalle">DETALLE PERSONAS</string>
 	<string name="mensaje_guardado_exitosamente">Persona Guardada Exitosamente!!</string>
+	<string name="seleccionar_foto">Seleccione la foto de la persona</string>
+	<string name="titulo_eliminar">Eliminar Persona</string>
+	<string name="mensaje_eliminar">¿Está seguro de eliminar esta persona?</string>
+	<string name="mensaje_positivo">Si</string>
+	<string name="mensaje_negativo">No</string>
+	<string name="eliminar">Eliminar</string>
 </resources>

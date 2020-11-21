@@ -32,8 +32,9 @@
 			android:id="@+id/menu_eliminar"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:onClick="eliminar"
 			android:src="@android:drawable/ic_menu_delete"
-			fab:fab_label="Eliminar C"
+			fab:fab_label="@string/eliminar"
 			fab:fab_size="mini" />
 
 	</com.github.clans.fab.FloatingActionMenu>

@@ -83,17 +83,13 @@ public class MainActivity extends AppCompatActivity implements AdaptadorPersona.
 	public void onPersonaClick(Persona p) {
 		Intent intent;
 		Bundle bundle;
-
 		bundle = new Bundle();
-
 		bundle.putString("id", p.getId());
 		bundle.putString("cedula", p.getCedula());
 		bundle.putString("nombre", p.getNombre());
 		bundle.putString("apellido", p.getApellido());
-
 		intent = new Intent(MainActivity.this, DetallePersona.class);
 		intent.putExtra("datos",bundle);
 		startActivity(intent);
-
 	}
 }

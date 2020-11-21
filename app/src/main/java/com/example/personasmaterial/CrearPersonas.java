@@ -82,7 +82,7 @@ public class CrearPersonas extends AppCompatActivity {
     	in.setType("image/*");
     	in.setAction(Intent.ACTION_GET_CONTENT);
     	startActivityForResult(Intent.createChooser(in,
-				"Seleccione la foto de la persona"),
+				getString(R.string.seleccionar_foto)),
 				1);
 	}
 
