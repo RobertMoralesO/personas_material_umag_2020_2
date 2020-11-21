@@ -72,14 +72,12 @@ public class DetallePersona extends AppCompatActivity {
 				onBackPressed();
 			}
 		});
-
 		builder.setNegativeButton(negativo, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
 			}
 		});
-
 		AlertDialog dialog = builder.create();
 		dialog.show();
 	}

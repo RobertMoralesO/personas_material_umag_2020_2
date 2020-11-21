@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.storage.FirebaseStorage;
@@ -41,20 +42,24 @@ public class CrearPersonas extends AppCompatActivity {
     	Persona p;
     	InputMethodManager imp;
 
-    	ced = cedula.getText().toString();
-    	nom = nombre.getText().toString();
-    	apell = apellido.getText().toString();
-    	id = Datos.getId();
-    	imp = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		imp = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		imp.hideSoftInputFromWindow(cedula.getWindowToken(), 0);
 
-    	p = new Persona(ced,nom,apell,id);
-    	p.guardar();
-    	imp.hideSoftInputFromWindow(cedula.getWindowToken(),0);
-		limpiar();
-		subir_foto(id);
-		Snackbar.make(v, R.string.mensaje_guardado_exitosamente,
-				Snackbar.LENGTH_LONG).show();
-	}
+		if(validar()) {
+			ced = cedula.getText().toString();
+			nom = nombre.getText().toString();
+			apell = apellido.getText().toString();
+			id = Datos.getId();
+
+			p = new Persona(ced, nom, apell, id);
+			p.guardar();
+
+			limpiar();
+			subir_foto(id);
+			Snackbar.make(v, R.string.mensaje_guardado_exitosamente, Snackbar.LENGTH_LONG).show();
+			uri = null;
+		}
+    }
 
 	public void subir_foto(String id){
     	StorageReference child = storageReference.child(id);
@@ -72,18 +77,16 @@ public class CrearPersonas extends AppCompatActivity {
 	}
 
 	public void onBackPressed(){
-	  finish();
-	  Intent i = new Intent(CrearPersonas.this, MainActivity.class);
-	  startActivity(i);
+    	finish();
+    	Intent i = new Intent(CrearPersonas.this, MainActivity.class);
+    	startActivity(i);
 	}
 
 	public void seleccionarFoto(View v){
     	Intent in = new Intent();
     	in.setType("image/*");
     	in.setAction(Intent.ACTION_GET_CONTENT);
-    	startActivityForResult(Intent.createChooser(in,
-				getString(R.string.seleccionar_foto)),
-				1);
+    	startActivityForResult(Intent.createChooser(in, getString(R.string.seleccionar_foto)), 1);
 	}
 
 	protected void onActivityResult(int requesCode, int resultCode, Intent data){
@@ -94,5 +97,29 @@ public class CrearPersonas extends AppCompatActivity {
     			foto.setImageURI(uri);
 			}
 		}
+	}
+
+	public boolean validar(){
+    	if(cedula.getText().toString().isEmpty()){
+    		cedula.setError(getString(R.string.mensaje_error_cedula));
+    		cedula.requestFocus();
+    		return false;
+		}
+		if(nombre.getText().toString().isEmpty()){
+			nombre.setError(getString(R.string.mensaje_error_nombre));
+			nombre.requestFocus();
+			return false;
+		}
+		if(apellido.getText().toString().isEmpty()){
+			apellido.setError(getString(R.string.mensaje_error_apellido));
+			apellido.requestFocus();
+			return false;
+		}
+		if (uri == null){
+			Snackbar.make((View)cedula, R.string.mensaje_error_foto, Snackbar.LENGTH_LONG).show();
+			return false;
+		}
+
+    	return true;
 	}
 }
