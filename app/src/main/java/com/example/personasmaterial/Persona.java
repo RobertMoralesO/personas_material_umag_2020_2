@@ -13,6 +13,10 @@ public class Persona {
 		this.id = id;
 	}
 
+	public Persona(){
+
+	}
+
 	public String getCedula() {
 		return cedula;
 	}

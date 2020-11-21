@@ -19,7 +19,7 @@ public class Datos {
 		databaseReference.child(bd).child(p.getId()).setValue(p);
 	}
 
-	public static  ArrayList<Persona> obtener(){
-		return personas;
+	public static void setPersonas(ArrayList<Persona> personas){
+		personas = personas;
 	}
 }
