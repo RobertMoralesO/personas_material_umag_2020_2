@@ -2,8 +2,11 @@ package com.example.personasmaterial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -26,13 +29,17 @@ public class CrearPersonas extends AppCompatActivity {
     public void guardar(View v){
     	String ced, nom, apell, id;
     	Persona p;
+    	InputMethodManager imp;
+
     	ced = cedula.getText().toString();
     	nom = nombre.getText().toString();
     	apell = apellido.getText().toString();
+    	imp = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
     	p = new Persona(ced,nom,apell,"");
     	p.guardar();
-    	limpiar();
+    	imp.hideSoftInputFromWindow(cedula.getWindowToken(),0);
+		limpiar();
 		Snackbar.make(v, R.string.mensaje_guardado_exitosamente,
 				Snackbar.LENGTH_LONG).show();
 	}
@@ -45,5 +52,11 @@ public class CrearPersonas extends AppCompatActivity {
     	nombre.setText("");
     	apellido.setText("");
     	cedula.requestFocus();
+	}
+
+	public void onBackPressed(){
+	  finish();
+	  Intent i = new Intent(CrearPersonas.this, MainActivity.class);
+	  startActivity(i);
 	}
 }
