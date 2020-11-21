@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Personas Material</string>
+	<string name="titulo_crear">CREATE PEOPLE</string>
+	<string name="cedula">Id</string>
+	<string name="nombre">Name</string>
+	<string name="apellido">Lastname</string>
+	<string name="guardar">Save</string>
+	<string name="limpiar">Clear</string>
+	<string name="titulo_detalle">PEOPLE DETAIL</string>
+	<string name="mensaje_guardado_exitosamente">Person saves Successfully</string>
+	<string name="seleccionar_foto">Choose Person\'s photo</string>
+	<string name="titulo_eliminar">Delete Person</string>
+	<string name="mensaje_eliminar">Are you sure to eliminate this person?</string>
+	<string name="mensaje_positivo">Yes</string>
+	<string name="mensaje_negativo">No</string>
+	<string name="eliminar">Delete</string>
+	<string name="mensaje_error_cedula">Type ID</string>
+	<string name="mensaje_error_nombre">Type Name</string>
+	<string name="mensaje_error_apellido">Type Lastname</string>
+	<string name="mensaje_error_foto">Choose Person\'s photo</string>
+</resources>
