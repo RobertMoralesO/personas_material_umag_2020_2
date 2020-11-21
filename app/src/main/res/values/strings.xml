@@ -16,4 +16,5 @@
 	<string name="guardar">Guardar</string>
 	<string name="limpiar">Limpiar</string>
 	<string name="titulo_detalle">DETALLE PERSONAS</string>
+	<string name="mensaje_guardado_exitosamente">Persona Guardada Exitosamente!!</string>
 </resources>
